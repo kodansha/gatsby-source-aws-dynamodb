@@ -1,4 +1,4 @@
-const processData = (item, createNodeId, createContentDigest) => {
+export const processData = (item: any, createNodeId: any, createContentDigest: any, options: any) => {
   const nodeContentDigest = createContentDigest(item);
   const nodeId = item.id
     ? createNodeId(`dynamodb-${item.id}`)
@@ -17,5 +17,3 @@ const processData = (item, createNodeId, createContentDigest) => {
   });
   return nodeData;
 };
-
-module.exports = { processData };
