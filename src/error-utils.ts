@@ -1,3 +1,5 @@
+import type { Reporter } from "gatsby/reporter";
+
 export const CODES = {
   Generic: `10000`,
   MissingResource: `10001`,
@@ -35,7 +37,7 @@ enum ReporterType {
 
 // TODO: Refactor to use contextual data instead of only context.sourceMessage
 // once reporter.setErrorMap is guaranteed to be available
-export const ERROR_MAP = {
+export const ERROR_MAP: Reporter["errorMap"] = {
   [CODES.Generic]: {
     text: (context: any) => context.sourceMessage,
     level: ReporterLevel.Error,
