@@ -4,25 +4,26 @@ A Gatsby source plugin for sourcing data into your Gatsby application from AWS D
 
 ## Install
 
-`npm install --save gatsby-source-aws-dynamodb`
+`npm install gatsby-source-aws-dynamodb`
 
-## Usage
-
-In your `gatsby-config.js`:
+## How to Use
 
 ```js
+// In your gatsby-config.js
 module.exports = {
   plugins: [
     {
       resolve: 'gatsby-source-aws-dynamodb',
       options: {
+        // Arbitrary name for the remote schema Query type
         typeName: '<INPUT_GRAPHQL_TYPE_NAME_HERE>',
+        // It is strongly recommended that credentials are stored in environment variables
         accessKeyId: '<AWS_ACCESS_KEY_ID>', 
         secretAccessKey: '<AWS_SECRET_ACCESS_KEY>',
         region: '<AWS_REGION>',
         params: {
           TableName : "<TABLE_NAME>",
-          // OTHER PARAMS HERE
+          // Other params to scan here
         }
       }
     },
