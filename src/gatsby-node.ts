@@ -1,6 +1,6 @@
 import DynamoDB from 'aws-sdk/clients/dynamodb';
-import { ERROR_MAP } from './src/error-utils';
-import { processData } from './src/utils';
+import { ERROR_MAP } from './error-utils';
+import { processData } from './utils';
 import { GatsbyNode, PluginOptions, ParentSpanPluginArgs, SourceNodesArgs } from 'gatsby'
 
 export const onPreInit: GatsbyNode['onPreInit'] = async ({ reporter } : ParentSpanPluginArgs ) => {
